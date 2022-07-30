@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Grid Renderer.gd" type="Script" id=1]
+
+[node name="Grid Renderer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+render_mode = 3
+
+[node name="VBox" type="VBoxContainer" parent="."]
+margin_right = 416.0
+margin_bottom = 381.0
+
+[node name="Buttons" type="HBoxContainer" parent="VBox"]
+margin_right = 416.0
+margin_bottom = 24.0
+
+[node name="Action" type="Button" parent="VBox/Buttons"]
+margin_right = 136.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "Setup"
+
+[node name="Thread" type="HBoxContainer" parent="VBox/Buttons"]
+margin_left = 140.0
+margin_right = 276.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBox/Buttons/Thread"]
+margin_left = 18.0
+margin_top = 5.0
+margin_right = 90.0
+margin_bottom = 19.0
+text = "Use Thread"
+
+[node name="CheckBox" type="CheckBox" parent="VBox/Buttons/Thread"]
+margin_left = 94.0
+margin_right = 118.0
+margin_bottom = 24.0
+
+[node name="Time" type="HBoxContainer" parent="VBox/Buttons"]
+margin_left = 280.0
+margin_right = 416.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBox/Buttons/Time"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 117.0
+margin_bottom = 19.0
+text = "Time Since Start: "
+
+[node name="Time" type="Label" parent="VBox/Buttons/Time"]
+margin_left = 121.0
+margin_top = 5.0
+margin_right = 129.0
+margin_bottom = 19.0
+text = "0"
+
+[node name="GridContainer" type="GridContainer" parent="VBox"]
+margin_top = 28.0
+margin_right = 416.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 100, 100 )
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+
+[connection signal="pressed" from="VBox/Buttons/Action" to="." method="_on_Action_pressed"]
